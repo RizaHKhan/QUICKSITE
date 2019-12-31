@@ -21,8 +21,6 @@ class QuickSite {
     }
 
     public function add_admin_pages() {
-        add_submenu_page('QUICKSITE', 'QUICKSITE', 'manage_options', 'quicksite_plugin', array($this, 'admin_index'), 'dashicons-paperclip', 110);
-        add_menu_page('QUICKSITE', 'QUICKSITE', 'manage_options', 'quicksite_plugin', array($this, 'admin_index'), 'dashicons-paperclip', 110);
         add_menu_page('QUICKSITE', 'QUICKSITE', 'manage_options', 'quicksite_plugin', array($this, 'admin_index'), 'dashicons-paperclip', 110);
     }
 
