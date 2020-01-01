@@ -21,11 +21,21 @@ class QuickSite {
     }
 
     public function add_admin_pages() {
-        add_menu_page('QUICKSITE', 'QUICKSITE', 'manage_options', 'quicksite_plugin', array($this, 'admin_index'), 'dashicons-paperclip', 110);
+        add_menu_page('QUICKSITE', 'QUICKSITE', 'manage_options', 'quicksite_plugin', array($this, 'main_menu'), 'dashicons-paperclip', 110);
+        add_submenu_page('quicksite_plugin', 'QUICKSITE UPLOAD', 'UPLOAD', 'manage_options', 'upload_quicksite', array($this, 'sub_menu_upload'));
+        add_submenu_page('quicksite_plugin', 'QUICKSITE DOWNLOAD', 'DOWNLOAD', 'manage_options', 'download_quicksite', array($this, 'sub_menu_download'));
     }
 
-    public function admin_index() {
+    public function main_menu() {
         require_once plugin_dir_path(__FILE__) . 'template/home.php';        
+    }
+
+    public function sub_menu_upload() {
+        require_once plugin_dir_path(__FILE__) . 'template/upload.php';        
+    }
+
+    public function sub_menu_download() {
+        require_once plugin_dir_path(__FILE__) . 'template/download.php';        
     }
 
     function activate() {
@@ -39,7 +49,6 @@ class QuickSite {
     function enqueue() {
         // enqueue all of our scripts
         wp_enqueue_style('QUICKSITE_STYLE', plugins_url('/css/QUICKSITE-style.css', __FILE__));
-        wp_enqueue_script('QUICKSITE_SCRIPT', plugins_url('/js/QUICKSITE-script.js', __FILE__));
     }
 }
 

@@ -9,23 +9,19 @@ header('Content-Disposition: attachment; filename="export.json"');
 require_once('../../../../wp-config.php');
 global $wpdb;
 
-// $post = $wpdb->get_results("SELECT * FROM `".$wpdb->prefix."posts`", OBJECT_K);
-
-// print_r($post);
-
 $selectedTables = $_POST['tables'];
-$output = array();
+$json_array = array();
 
 foreach($selectedTables as $selectedTablerow) {
     
-    $eachTable = $wpdb->get_results("SELECT * FROM $selectedTablerow");
-
-    array_push($output, $selectedTablerow);
+    $eachTable = $wpdb->get_results("SELECT * FROM `".$wpdb->prefix."$selectedTablerow`", OBJECT_K);
 
     foreach($eachTable as $eachTablerow) {
         
-        array_push($output, $eachTablerow);
+        $json_array[] = array(
+            $selectedTablerow => $eachTablerow
+        );
     }
 }
 
-print_r($output);
+print_r(json_encode($json_array));

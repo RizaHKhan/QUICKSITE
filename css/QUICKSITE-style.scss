@@ -1,20 +1,20 @@
 .quicksite {
     display: flex;
     flex-direction: column;
-
+    width: 500px;
+    
     .header {
-        margin: 20px auto 20px auto;
-        padding: 50px;
-        border: solid 5px red;
-        color: red;
-        background: black;
+        color: rgba(20, 20, 255, .75);
         font-size: 50px;
+        padding: 20px;
+        border-bottom: 7px solid;
+        width: 250px;
     }
 
     p {
-        margin: auto;
+        font-size: 15px;
     }
-
+    
     form {
         display: flex;
         flex-direction: column;
