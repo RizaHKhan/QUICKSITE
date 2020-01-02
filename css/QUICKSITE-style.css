@@ -39,4 +39,15 @@
 .quicksite .tables {
   min-height: 250px !important;
 }
+
+.quicksite #json-data {
+  width: 600px;
+  margin: auto;
+  height: auto;
+}
+
+.quicksite strong {
+  color: red;
+  font-size: 16px;
+}
 /*# sourceMappingURL=QUICKSITE-style.css.map */

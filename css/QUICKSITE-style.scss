@@ -28,4 +28,15 @@
     .tables {
         min-height: 250px !important;
     }
+
+    #json-data {
+        width: 600px;
+        margin: auto;
+        height: auto;
+    }
+
+    strong {
+        color: red;
+        font-size: 16px;
+    }
 }
